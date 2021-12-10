@@ -2,19 +2,19 @@ import { Link } from "react-router-dom";
 
 function Intro() {
   return (
-    <div className="introPage">
-      <div className="dadJokesH1">
-        <h1>Dad Jokes</h1>
+    <div className="gradientBack">
+      <div>
+        <h1 className="dadJokesIntroH1">Dad Jokes</h1>
       </div>
-      <div className="introH2Div">
+      <div>
         <h2 className="introH2">You Laugh, You Lose</h2>
       </div>
-      <div className="startGameBtnDiv">
-        <Link to="game-setup">Start Game</Link>
+      <div className="btnDiv">
+        <Link to="game-setup"><button className="orangeBtn">Start Game</button></Link>
       </div>
       <div className="howItWorksPDiv">
         <p>
-          <Link to="how-it-works">How it Works?</Link>
+          <Link to="how-it-works" className="whiteLinkBtn">How it Works?</Link>
         </p>
       </div>
     </div>

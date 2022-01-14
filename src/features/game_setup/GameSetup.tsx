@@ -7,7 +7,7 @@ function GameSetup() {
         <div className="pacificoBlueH2">
           <h2 className="gameSetupH2">Game Setup</h2>
         </div>
-        <p className="howItWorksP">
+        <p className="playerAndRoundsP">
           Select the number of players and rounds you want to play
         </p>
         {/* Players  */}

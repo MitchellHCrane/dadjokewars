@@ -1,12 +1,14 @@
 .introContents {
     height: 100vh;
+    margin: 0px 24px 0px 24px;
+
 }
 
 .dadJokesIntroH1 {
     color: #fff;
 	font-size: 48px;
     font-family: 'Pacifico', cursive;
-    padding-top: 360px;
+    padding-top: 280px;
 }
 
 .introH2 {
@@ -17,7 +19,7 @@
 }
 
 #introOrangeBtn {
-    margin-top: 280px;
+    margin-top: 216px;
 }
 
 .howItWorksP{

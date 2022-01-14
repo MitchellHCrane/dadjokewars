@@ -1,6 +1,7 @@
 .howItWorksDiv {
-    height: 100vh;
+    height: calc(100vh - 96px);
     text-align: center;
+    margin: 0px 24px 0px 24px;
 }
 
 .howItWorksH2 {
@@ -9,5 +10,5 @@
 
 .howItWorksP {
     font-family: 'Quicksand', sans-serif;
-    margin: 24px 40px;
+    margin-top: 24px;
 }

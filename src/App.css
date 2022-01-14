@@ -49,7 +49,9 @@ h1 {
 }
 
 #bottomBtn {
-	margin-top: 504px;
+  position: absolute;
+  top: 664px;
+  transform: translate(-50%, -50%);
 }
 
 /* CSS Reset */

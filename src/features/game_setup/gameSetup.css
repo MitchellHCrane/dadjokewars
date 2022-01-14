@@ -1,13 +1,16 @@
 .gameSetupDiv {
-  height: 100vh;
+  height: calc(100vh - 96px);
   text-align: center;
+  margin: 0px 24px 0px 24px;
 }
 
 .gameSetupH2 {
-  margin-top: 64px;
+  padding-top: 48px;
 }
 
-.gameSetupPlayerP {
+.playerAndRoundsP {
+  font-family: "Quicksand", sans-serif;
+  margin: 24px 0px 0px;
 }
 
 /* add/minus/players/rounds  */
@@ -59,14 +62,13 @@
 
 .playerAndNumber {
   display: block;
-  margin: 80px 24px 80px 24px;
 }
 
 .playerNumbers {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .playerP {
-    text-align: left;
-
+  text-align: left;
+  margin-top: 24px;
 }

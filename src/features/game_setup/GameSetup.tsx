@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 function GameSetup() {
   return (
     <>
-      <div className="gameSetupDiv">
-        <div className="pacificoBlueH2">
-          <h2 className="gameSetupH2">Game Setup</h2>
-        </div>
+      <div className="pageLayoutContainer">
+          <h2 className="pacificoBlueH2">Game Setup</h2>
         <p className="playerAndRoundsP">
           Select the number of players and rounds you want to play
         </p>
@@ -32,7 +30,7 @@ function GameSetup() {
             <span className="plusPlayer"></span>
           </div>
         </div>
-        <div className="btnDiv">
+        <div className="bottomButtons">
           <Link to="/player-names">
             <button id="bottomBtn" className="orangeBtn">
               Enter Player Names

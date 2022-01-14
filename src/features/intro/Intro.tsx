@@ -13,18 +13,21 @@ function Intro() {
             <h2 className="introH2">You Laugh, You Lose</h2>
           </div>
         </div>
-
-        <div className="btnDiv">
-          <Link to="game-setup">
-            <button id="introOrangeBtn" className="orangeBtn">Start Game</button>
-          </Link>
-        </div>
-        <div className="howItWorksPDiv">
-          <p className="howItWorksP">
-            <Link to="how-it-works" className="whiteLinkBtn">
-              How it Works?
+        <div className="bottomButtons">
+          <div className="btnDiv">
+            <Link to="game-setup">
+              <button id="introOrangeBtn" className="orangeBtn">
+                Start Game
+              </button>
             </Link>
-          </p>
+          </div>
+          <div className="howItWorksPDiv">
+            <p className="howItWorksP">
+              <Link to="how-it-works" className="whiteLinkBtn">
+                How it Works?
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

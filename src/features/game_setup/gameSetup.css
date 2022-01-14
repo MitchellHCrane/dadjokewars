@@ -1,12 +1,4 @@
-.gameSetupDiv {
-  height: calc(100vh - 96px);
-  text-align: center;
-  margin: 0px 24px 0px 24px;
-}
 
-.gameSetupH2 {
-  padding-top: 48px;
-}
 
 .playerAndRoundsP {
   font-family: "Quicksand", sans-serif;

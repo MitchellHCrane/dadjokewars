@@ -10,19 +10,28 @@ function GameSetup() {
         <p className="howItWorksP">
           Select the number of players and rounds you want to play
         </p>
-        <div>
+        {/* Players  */}
+        <div className="playerAndNumber">
           <p id="gameSetupPlayerP" className="playerP">
             Players
           </p>
-          <input></input>
+          <div className="playerNumbers">
+            <span className="minusPlayer"></span>
+            <input className="playerInput" type="text" value="1"></input>
+            <span className="plusPlayer"></span>
+          </div>
         </div>
-        <div>
+        {/* Rounds  */}
+        <div className="playerAndNumber">
           <p id="gameSetupPlayerP" className="playerP">
             Rounds
           </p>
-          <input></input>
+          <div className="playerNumbers">
+            <span className="minusPlayer"></span>
+            <input className="playerInput" type="text" value="1"></input>
+            <span className="plusPlayer"></span>
+          </div>
         </div>
-        <br />
         <div className="btnDiv">
           <Link to="/player-names">
             <button id="bottomBtn" className="orangeBtn">

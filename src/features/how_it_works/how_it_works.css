@@ -1,0 +1,13 @@
+.howItWorksDiv {
+    height: 100vh;
+    text-align: center;
+}
+
+.howItWorksH2 {
+    padding-top: 64px; 
+}
+
+.howItWorksP {
+    font-family: 'Quicksand', sans-serif;
+    margin: 24px 40px;
+}

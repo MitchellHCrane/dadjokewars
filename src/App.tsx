@@ -3,8 +3,12 @@ import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import "./features/intro/Intro.css";
+import "./features/header/header.css";
+import "./features/how_it_works/how_it_works.css";
+import "./features/game_setup/gameSetup.css";
 
-import Header from "./features/header/Header";
+
+import LayoutWithHeader from "./features/layout/LayoutWithHeader"
 import Intro from "./features/intro/Intro";
 import HowItWorks from "./features/how_it_works/HowItWorks";
 import GameSetup from "./features/game_setup/GameSetup";
@@ -17,18 +21,17 @@ import React from "react";
 function App() {
   return (
      <React.Fragment>
-      <Header />
       <Router>
         <Routes>
             <Route path="/" element={<Intro />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/game-setup" element={<GameSetup />} />
-            <Route path="/player-names" element={<PlayerNames />} />
-            <Route path="/play-game" element={<PlayGame />} />
+            <Route path="/how-it-works" element={<LayoutWithHeader><HowItWorks /></LayoutWithHeader>} />
+            <Route path="/game-setup" element={<LayoutWithHeader><GameSetup /></LayoutWithHeader>} />
+            <Route path="/player-names" element={<LayoutWithHeader><PlayerNames /></LayoutWithHeader>} />
+            <Route path="/play-game" element={<LayoutWithHeader><PlayGame /></LayoutWithHeader>} />
             <Route path="/game-over" element={<GameOver />} />
             {/* <Route path="/sudden-death-game-play" element={SuddenDeathGamePlay} /> */}
             {/* <Route path="/sudden-death" element={SuddenDeath /> */}
-            <Route path="/*" element={<PageNotFound />} />
+            <Route path="/*" element={<LayoutWithHeader><PageNotFound /></LayoutWithHeader>} />
         </Routes>
       </Router>
     </React.Fragment>

@@ -1,6 +1,25 @@
-.dadJokesIntroH1 {
-    color: #FFFFFF;
+.introContents {
+    height: 100vh;
 }
+
+.dadJokesIntroH1 {
+    color: #fff;
+	font-size: 48px;
+    font-family: 'Pacifico', cursive;
+    padding-top: 360px;
+}
+
 .introH2 {
     color: #FFFFFF;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 24px;
+}
+
+#introOrangeBtn {
+    margin-top: 280px;
+}
+
+.howItWorksP{
+    margin-top: 24px;
 }

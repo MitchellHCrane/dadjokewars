@@ -1,14 +1,4 @@
-
-
-.playerAndRoundsP {
-  font-family: "Quicksand", sans-serif;
-  margin: 24px 0px 0px;
-}
-
 /* add/minus/players/rounds  */
-
-.playerNumbers {
-}
 
 .plusPlayer {
   background: url(../../images/plus.png) no-repeat;
@@ -46,21 +36,7 @@
   vertical-align: middle;
 }
 
-.playerInput:focus {
-  outline: #f4a261;
-  border-color: #f4a261;
-  /* box-shadow: 0 0 3px #000; */
-}
-
-.playerAndNumber {
-  display: block;
-}
-
 .playerNumbers {
   margin-top: 16px;
 }
 
-.playerP {
-  text-align: left;
-  margin-top: 24px;
-}

@@ -1,0 +1,16 @@
+
+
+.playerNamesInput {
+    height: 62px;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    border: 2px solid #2a9d8f;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px 8px 8px 8px;
+  }
+
+  .playerNamesInput {
+      margin-top: 16px;
+  }

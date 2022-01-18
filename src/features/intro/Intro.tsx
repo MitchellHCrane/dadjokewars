@@ -13,7 +13,7 @@ function Intro() {
             <h2 className="introH2">You Laugh, You Lose</h2>
           </div>
         </div>
-        <div className="bottomButtons">
+        <div id="removeGradient" className="bottomButtons">
           <div className="btnDiv">
             <Link to="game-setup">
               <button id="introOrangeBtn" className="orangeBtn">

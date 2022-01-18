@@ -19,7 +19,8 @@
     margin-top: 24px;
 }
 
-#introOrangeBtn {
+#removeGradient {
+    background-image: none;
 }
 
 .howItWorksP{

@@ -3,18 +3,38 @@ import { Link } from "react-router-dom";
 function PlayerNames() {
   return (
     <>
-      <h2>Player Names</h2>
-      <p>Enter player names</p>
-      <div>
-        <p>Player 1</p>
-        <input></input>
-      </div>
-      <div>
-        <p>Player 2</p>
-        <input></input>
-      </div><br/>
-      <div>
-        <Link to="/play-game">Start Game</Link>
+      <div className="pageLayoutContainer">
+        <h2 className="pacificoBlueH2">Player Names</h2>
+        <p className="playerAndRoundsP">
+          Enter the names of everyone playing Dad Joke Wars.
+        </p>
+        <div className="playerAndNumber">
+          <p id="gameSetupPlayerP" className="playerP">
+            Player 1
+          </p>
+          <input className="playerNamesInput" type="text"></input>
+        </div>
+        <div className="playerAndNumber">
+          <p id="gameSetupPlayerP" className="playerP">
+            Player 2
+          </p>
+          
+          <input className="playerNamesInput" type="text"></input>
+        </div>
+        <div className="bottomButtons">
+          <Link to="/play-game">
+            <button id="bottomBtn" className="orangeBtn">
+              Start Game
+            </button>
+          </Link>
+        </div>
+        <div className="howItWorksPDiv">
+          <p className="howItWorksP">
+            <Link id="returnGreen" to="/game-setup" className="whiteLinkBtn">
+              Back to Game Setup
+            </Link>
+          </p>
+        </div>
       </div>
     </>
   );

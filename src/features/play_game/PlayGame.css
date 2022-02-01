@@ -1,0 +1,37 @@
+.roundContainer {
+    text-align: center;
+    height: 72px;
+    line-height: 72px;
+    background-color: #f4a261;
+    vertical-align: middle;
+}
+
+#roundNumber {
+    /* padding:   */
+}
+
+.jokeContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.jokeBox {
+    position: relative;
+    color: #fff;
+    align-self: center;
+    height: 156px;
+    width: 80vw;
+    max-width: 400px;
+    background-color: #2A9D8F;
+    border-radius: 8px;
+}
+
+.randomJoke {
+    padding: 16px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

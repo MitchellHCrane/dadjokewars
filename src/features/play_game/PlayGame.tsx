@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 function PlayGame() {
   return (
     <div>
@@ -17,22 +16,31 @@ function PlayGame() {
         <div className="jokeContainer">
           <div className="jokeBox">
             <p className="randomJoke">Random Joke</p>
+            <button className="viewJoke"></button>
           </div>
           {/* <button onClick={blurEffect}></button> */}
         </div>
+        <div className="playerLaughCount">
+          <p className="playerLaughCountText">Player</p>
+          <p className="playerLaughCountText">Laugh Count</p>
+        </div>
+        <div className="namesAndCount">
+          <p className="playerName">Mitchell</p>
+          <span className="minusLaugh"></span>
+          <p className="laughNumber">2</p>
+          <span className="plusLaugh"></span>
+        </div>
         <div className="bottomButtons">
           <Link to="">
-            <button id="bottomBtn" className="orangeBtn">
-              Next Player
-            </button>
+            <button className="orangeBtn">Next Player</button>
           </Link>
-        </div>
-        <div className="howItWorksPDiv">
-          <p className="howItWorksP">
-            <Link id="returnGreen" className="whiteLinkBtn" to="/game-over">
-              End Game
-            </Link>
-          </p>
+          <div className="howItWorksPDiv">
+            <p className="howItWorksP">
+              <Link id="returnGreen" className="whiteLinkBtn" to="/game-over">
+                End Game
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

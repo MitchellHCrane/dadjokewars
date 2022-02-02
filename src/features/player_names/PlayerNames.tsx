@@ -18,7 +18,7 @@ function PlayerNames() {
           <p id="gameSetupPlayerP" className="playerP">
             Player 2
           </p>
-          
+
           <input className="playerNamesInput" type="text"></input>
         </div>
         <div className="bottomButtons">
@@ -27,13 +27,13 @@ function PlayerNames() {
               Start Game
             </button>
           </Link>
-        </div>
-        <div className="howItWorksPDiv">
-          <p className="howItWorksP">
-            <Link id="returnGreen" to="/game-setup" className="whiteLinkBtn">
-              Back to Game Setup
-            </Link>
-          </p>
+          <div className="howItWorksPDiv">
+            <p className="howItWorksP">
+              <Link id="returnGreen" to="/game-setup" className="whiteLinkBtn">
+                Back to Game Setup
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </>

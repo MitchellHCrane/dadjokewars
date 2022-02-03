@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import LayoutWithHeader from "../layout/LayoutWithHeader";
 
 function Intro() {
   return (
@@ -14,21 +13,20 @@ function Intro() {
           </div>
         </div>
         <div id="removeGradient" className="bottomButtons">
-          <div className="btnDiv">
-            <Link to="game-setup">
-              <button id="introOrangeBtn" className="orangeBtn">
-                Start Game
-              </button>
+          <Link to="game-setup">
+            <button className="orangeBtn">
+              Start Game
+            </button>
+          </Link>
+    
+        
+          <p className="bottomLink">
+            <Link to="how-it-works" className="whiteLinkBtn">
+              How it Works?
             </Link>
-          </div>
-          <div className="howItWorksPDiv">
-            <p className="howItWorksP">
-              <Link to="how-it-works" className="whiteLinkBtn">
-                How it Works?
-              </Link>
-            </p>
-          </div>
-        </div>
+          </p>
+        
+      </div>
       </div>
     </div>
   );

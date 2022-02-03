@@ -25,16 +25,14 @@ function GameSetup() {
 
           {/* Rounds  */}
 
-          {/* <div>
-          <label htmlFor="player2" id="gameSetupPlayerP">
-            Rounds
-          </label>
-          <div className="playerNumbers">
-            <span className="minusPlayer"></span>
-            <input className="playerInput" type="text" value="1"></input>
-            <span className="plusPlayer"></span>
+          <div className="inputContainer">
+            <label htmlFor="player">Players</label>
+            <div className="inputNumber">
+              <span className="minusPlayer"></span>
+              <input name="player" type="number" value="1" />
+              <span className="plusPlayer"></span>
+            </div>
           </div>
-        </div> */}
         </div>
         {/* End Page Content */}
 

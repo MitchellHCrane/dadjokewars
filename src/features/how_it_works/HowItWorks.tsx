@@ -6,7 +6,7 @@ function HowItWorks() {
       <div className="pageLayoutContainer">
           <h2 className="pacificoBlueH2">How it Works</h2>
         <div>
-          <p className="howItWorksP">
+          <p className="bottomLink">
             Try not to laugh at ridiculous dad jokes. Be the one with the least
             amount of laughs at the end of the game to win.
           </p>

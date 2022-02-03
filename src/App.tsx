@@ -8,6 +8,7 @@ import "./features/how_it_works/how_it_works.css";
 import "./features/game_setup/gameSetup.css";
 import "./features/player_names/PlayerNames.css";
 import "./features/play_game/PlayGame.css";
+import "./features/game_over/game_over.css";
 
 import LayoutWithHeader from "./features/layout/LayoutWithHeader";
 import Intro from "./features/intro/Intro";

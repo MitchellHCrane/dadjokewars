@@ -124,11 +124,33 @@ table {
   border-spacing: 0;
 }
 
+body,
+html,
+* {
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+label {
+  font-family: "Pacifico", cursive;
+  font-size: 18px;
+  color: #264653;
+  text-align: left;
+  display: block;
+  margin-bottom: 16px;
+}
+
 /* Global Styles */
 h1 {
   color: #fff;
   font-size: 40px;
   font-family: "Pacifico", cursive;
+}
+
+p {
+  font-size: 24px;
+  font-family: "Quicksand", sans-serif;
+  color: #264653;
 }
 
 .pacificoBlueH2 {
@@ -139,9 +161,41 @@ h1 {
 
 .pageLayoutContainer {
   text-align: center;
-  margin: 0px 24px 0px 24px;
-  padding-top: 32px;
   padding-bottom: 164px;
+}
+
+.pageContent {
+  padding: 0 24px;
+}
+
+.pageHeading {
+  padding-top: 64px;
+  margin-bottom: 64px;
+}
+.pageHeading p {
+  margin-top: 16px;
+}
+
+.inputContainer {
+  margin-top: 24px;
+}
+
+input {
+  height: 64px;
+  width: 100%;
+  padding: 0 16px;
+  border: 2px solid #2a9d8f;
+  font-size: 24px;
+}
+
+.inputNumber {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.inputNumber input {
+  text-align: center;
 }
 
 /* Gradient Background  */
@@ -180,16 +234,20 @@ h1 {
   bottom: 0px;
   left: 0;
   right: 0;
-  padding: 32px 24px 16px;
-  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+  padding: 32px 24px 32px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 #returnGreen {
-  color:#2a9d8f
+  color: #2a9d8f;
 }
 
 /* Inputs  */
-
 
 .playerAndRoundsP {
   font-family: "Quicksand", sans-serif;

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import LayoutWithHeader from "../layout/LayoutWithHeader";
 
 function Intro() {
   return (

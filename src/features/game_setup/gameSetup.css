@@ -1,23 +1,10 @@
 /* add/minus/players/rounds  */
 
-.plusPlayer {
-  background: url(../../images/plus.png) no-repeat;
-  background-position: center;
-  cursor: pointer;
-  width: 10%;
-  height: 64px;
-  border-radius: 0px 8px 8px 0px;
-  border: 2px solid #2a9d8f;
-  border-left: 0;
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .minusPlayer {
   background: url(../../images/minus.png) no-repeat;
   background-position: center;
   cursor: pointer;
-  width: 10%;
+  width: 64px;
   height: 64px;
   border-radius: 8px 0px 0px 8px;
   border: 2px solid #2a9d8f;
@@ -26,17 +13,23 @@
   vertical-align: middle;
 }
 
-.playerInput {
-  height: 62px;
-  width: 70%;
-  text-align: center;
-  font-size: 26px;
+.plusPlayer {
+  background: url(../../images/plus.png) no-repeat;
+  background-position: center;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  border-radius: 0px 8px 8px 0px;
   border: 2px solid #2a9d8f;
+  border-left: 0;
   display: inline-block;
   vertical-align: middle;
 }
 
-.playerNumbers {
-  margin-top: 16px;
+.playerInput {
+  /* width: 70%;
+  text-align: center;
+  border: 2px solid #2a9d8f;
+  display: inline-block;
+  vertical-align: middle; */
 }
-

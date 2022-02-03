@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 function PlayGame() {
+  const [jokeVisible, setJokeVisible] = useState(false);
+
+  const jokeVisibleStyles = {
+    filter: "blur(4px)",
+  };
+
+  const toggleBlurBtn = () => {
+    setJokeVisible(!jokeVisible);
+  };
+
   return (
     <div>
       <div className="roundContainer">
@@ -15,8 +26,13 @@ function PlayGame() {
         </p>
         <div className="jokeContainer">
           <div className="jokeBox">
-            <p className="randomJoke">Random Joke</p>
-            <button className="viewJoke"></button>
+            <p
+              className="randomJoke"
+              style={!jokeVisible ? jokeVisibleStyles : {}}
+            >
+              Random Joke
+            </p>
+            <button onClick={toggleBlurBtn} className="viewJoke"></button>
           </div>
           {/* <button onClick={blurEffect}></button> */}
         </div>

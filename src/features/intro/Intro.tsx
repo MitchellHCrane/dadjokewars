@@ -14,19 +14,15 @@ function Intro() {
         </div>
         <div id="removeGradient" className="bottomButtons">
           <Link to="game-setup">
-            <button className="orangeBtn">
-              Start Game
-            </button>
+            <button className="orangeBtn">Start Game</button>
           </Link>
-    
-        
+
           <p className="bottomLink">
             <Link to="how-it-works" className="whiteLinkBtn">
               How it Works?
             </Link>
           </p>
-        
-      </div>
+        </div>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ function PlayerNames() {
             <input className="playerNamesInput" type="text"></input>
           </div>
         </div>
-        {/* End Page Content */}
+        {/* End Page Content Test*/}
 
         <div className="bottomButtons">
           <Link to="/play-game">

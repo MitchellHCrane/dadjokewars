@@ -218,9 +218,7 @@ input {
 }
 
 /* Name Grid  */
-.nameList {
-  
-}
+
 
 /* Gradient Background  */
 .gradientBack {
@@ -303,8 +301,4 @@ input {
   line-height: 56px;
   background-color: #f4a261;
   vertical-align: middle;
-}
-
-#roundNumber {
-  /* padding:   */
 }

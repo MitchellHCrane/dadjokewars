@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import GetJoke from "./getJoke";
 
 function PlayGame() {
+  //Blur Joke Functionality.
+
   const [jokeVisible, setJokeVisible] = useState(false);
 
   const jokeVisibleStyles = {
@@ -14,6 +17,7 @@ function PlayGame() {
 
   return (
     <>
+      <GetJoke />
       {/* Orange Banner  */}
       <div className="orangeBanner">
         <h2 className="pacificoBlueH2" id="roundNumber">
@@ -37,9 +41,8 @@ function PlayGame() {
               <p
                 className="randomJoke"
                 style={!jokeVisible ? jokeVisibleStyles : {}}
-              >
-                Random Joke
-              </p>
+                id="jokeDrop"
+              ></p>
               <button onClick={toggleBlurBtn} className="viewJoke"></button>
             </div>
             {/* <button onClick={blurEffect}></button> */}

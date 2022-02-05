@@ -16,6 +16,12 @@
   border-radius: 8px;
 }
 
+#jokeDrop {
+  font-size: 16px;
+  height: 156px;
+  width: 80vw;
+}
+
 .randomJoke {
   padding: 16px;
   color: #fff;

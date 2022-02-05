@@ -17,7 +17,6 @@ function PlayGame() {
 
   return (
     <>
-      <GetJoke />
       {/* Orange Banner  */}
       <div className="orangeBanner">
         <h2 className="pacificoBlueH2" id="roundNumber">
@@ -43,6 +42,7 @@ function PlayGame() {
                 style={!jokeVisible ? jokeVisibleStyles : {}}
                 id="jokeDrop"
               ></p>
+
               <button onClick={toggleBlurBtn} className="viewJoke"></button>
             </div>
             {/* <button onClick={blurEffect}></button> */}
@@ -60,9 +60,7 @@ function PlayGame() {
         </div>
         {/* End Page Content */}
         <div className="bottomButtons">
-          <Link to="">
-            <button className="orangeBtn">Next Player</button>
-          </Link>
+          <GetJoke />
           <p className="bottomLink">
             <Link id="returnGreen" className="whiteLinkBtn" to="/game-over">
               End Game

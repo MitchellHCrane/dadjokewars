@@ -17,13 +17,6 @@ function PlayGame() {
 
   return (
     <>
-      {/* Orange Banner  */}
-      <div className="orangeBanner">
-        <h2 className="pacificoBlueH2" id="roundNumber">
-          Round:
-        </h2>
-      </div>
-
       {/* Layout */}
       <div className="pageLayoutContainer">
         {/* Page Content */}
@@ -47,15 +40,21 @@ function PlayGame() {
             </div>
             {/* <button onClick={blurEffect}></button> */}
           </div>
-          <div className="playerLaughCount">
-            <p className="playerLaughCountText">Player</p>
-            <p className="playerLaughCountText">Laugh Count</p>
-          </div>
-          <div className="namesAndCount">
-            <p className="playerName">Mitchell</p>
-            <span className="minusLaugh"></span>
-            <p className="laughNumber">2</p>
-            <span className="plusLaugh"></span>
+          <div className="scoreContent">
+            <header className="playerLaughCount">
+              <p className="playerLaughCountText">Player</p>
+              <p className="playerLaughCountText">Laugh Count</p>
+            </header>
+            <div className="scoreBoard">
+              <div className="scoreBoardName">
+                <p className="playerName">Mitchell</p>
+              </div>
+              <div className="scoreBoardCount">
+                <span className="minusLaugh"></span>
+                <p className="laughNumber">2</p>
+                <span className="plusLaugh"></span>
+              </div>
+            </div>
           </div>
         </div>
         {/* End Page Content */}

@@ -55,9 +55,8 @@
 
 /* Player and Laugh Count  */
 
+
 .playerLaughCount {
-  display: flex;
-  justify-content: space-between;
   margin-top: 64px;
 }
 
@@ -66,17 +65,24 @@
   font-size: 24px;
   font-family: "Pacifico", cursive;
 }
-
-.namesAndCount {
-  display: flex;
-  align-items: center;
+.scoreBoard {
   margin-top: 16px;
+}
+
+.scoreBoardName {
+  display: flex;
 }
 
 .playerName {
   color: #2a9d8f;
   font-size: 24px;
   font-family: "Quicksand", sans-serif;
+}
+
+.scoreBoardCount {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .plusLaugh {

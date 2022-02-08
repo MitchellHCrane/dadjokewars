@@ -6,7 +6,7 @@ function GameOver() {
     <>
       {/* Layout */}
       <div className="gradientBack">
-        <div className="pageLayoutContainer">
+        <div className="pageLayoutContainer desktopMaxWidth">
           {/* Trophy Icon  */}
           <div className="trophyContainer">
             <span className="trophyIcon"></span>

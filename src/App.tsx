@@ -9,6 +9,7 @@ import "./features/player_names/PlayerNames.css";
 import "./features/play_game/PlayGame.css";
 import "./features/game_over/game_over.css";
 
+import LayoutWithRounds from "./features/layout/LayoutWithRounds";
 import LayoutWithHeader from "./features/layout/LayoutWithHeader";
 import Intro from "./features/intro/Intro";
 import HowItWorks from "./features/how_it_works/HowItWorks";
@@ -53,6 +54,7 @@ function App() {
             path="/play-game"
             element={
               <LayoutWithHeader>
+                <LayoutWithRounds />
                 <PlayGame />
               </LayoutWithHeader>
             }

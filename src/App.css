@@ -169,12 +169,11 @@ h3 {
   color: #fff;
 }
 
-.bottomLink{
+.bottomLink {
   margin-top: 24px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin-top: 24px;
 }
-
 
 /* Page layout  */
 
@@ -217,8 +216,21 @@ input {
   text-align: center;
 }
 
-/* Name Grid  */
+/* Desktop  */
+.desktopMaxWidth {
+  max-width: 64rem;
+  margin: 0 auto;
+}
 
+@media (min-width: 640px) {
+  .inputContainer {
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Name Grid  */
 
 /* Gradient Background  */
 .gradientBack {
@@ -241,6 +253,7 @@ input {
   font-size: 24px;
   padding: 8px 0px;
   width: 100%;
+
   color: #ffffff;
   text-decoration: none;
 }
@@ -267,6 +280,20 @@ input {
 
 #returnGreen {
   color: #2a9d8f;
+}
+
+@media (min-width: 640px) {
+  .bottomButtons {
+    position: absolute;
+  }
+
+  .orangeBtn {
+    max-width: 320px;
+  }
+
+  .bottomButtons {
+    padding: 48px 32px 48px 32px;
+  }
 }
 
 /* Inputs  */

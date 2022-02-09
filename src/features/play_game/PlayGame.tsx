@@ -1,7 +1,27 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import GetJoke from "./getJoke";
+import LayoutWithRounds from "../layout/LayoutWithRounds";
+import ScoreBoardPlayer from "./ScoreBoardPlayer";
 
 function PlayGame() {
+  //Blur Joke Functionality.
+
+  const players = [
+    {
+      name: "Mitchell",
+      score: 7,
+    },
+    {
+      name: "Skyler",
+      score: 2,
+    },
+  ];
+
+  const scoreBoard = players.map((player) => {
+    return <ScoreBoardPlayer player={player} key={player.name} />;
+  });
+
   const [jokeVisible, setJokeVisible] = useState(false);
 
   const jokeVisibleStyles = {
@@ -14,17 +34,11 @@ function PlayGame() {
 
   return (
     <>
-      {/* Orange Banner  */}
-      <div className="orangeBanner">
-        <h2 className="pacificoBlueH2" id="roundNumber">
-          Round:
-        </h2>
-      </div>
-
       {/* Layout */}
       <div className="pageLayoutContainer">
+        <LayoutWithRounds />
         {/* Page Content */}
-        <div className="pageContent">
+        <div className="pageContent desktopMaxWidth">
           {/* Page heading Styles */}
           <div className="pageHeading">
             <h2 className="pacificoBlueH2">Name You're Up!</h2>
@@ -37,29 +51,26 @@ function PlayGame() {
               <p
                 className="randomJoke"
                 style={!jokeVisible ? jokeVisibleStyles : {}}
+                id="jokeDrop"
               >
-                Random Joke
+                Past, present, and future walked into a bar.... It was tense.
               </p>
+
               <button onClick={toggleBlurBtn} className="viewJoke"></button>
             </div>
             {/* <button onClick={blurEffect}></button> */}
           </div>
-          <div className="playerLaughCount">
-            <p className="playerLaughCountText">Player</p>
-            <p className="playerLaughCountText">Laugh Count</p>
-          </div>
-          <div className="namesAndCount">
-            <p className="playerName">Mitchell</p>
-            <span className="minusLaugh"></span>
-            <p className="laughNumber">2</p>
-            <span className="plusLaugh"></span>
+          <div className="scoreContent">
+            <header className="playerLaughCount">
+              <p className="playerLaughCountText">Player</p>
+              <p className="playerLaughCountText">Laugh Count</p>
+            </header>
+            {scoreBoard}
           </div>
         </div>
         {/* End Page Content */}
         <div className="bottomButtons">
-          <Link to="">
-            <button className="orangeBtn">Next Player</button>
-          </Link>
+          <GetJoke />
           <p className="bottomLink">
             <Link id="returnGreen" className="whiteLinkBtn" to="/game-over">
               End Game

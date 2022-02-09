@@ -16,7 +16,22 @@
   border-radius: 8px;
 }
 
+#jokeDrop {
+  font-size: 16px;
+  height: 156px;
+}
+@media (min-width: 640px) {
+  .randomJoke {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  #jokeDrop {
+    width: 400px;
+  }
+}
+
 .randomJoke {
+  width: 96%;
   padding: 16px;
   color: #fff;
   margin: 0;
@@ -47,12 +62,22 @@
   box-shadow: 0px 0px 8px rgba(38, 70, 83, 0.5);
 }
 
+/* Score content  */
+@media (min-width: 640px) {
+  .scoreContent {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
 /* Player and Laugh Count  */
 
 .playerLaughCount {
   display: flex;
   justify-content: space-between;
-  margin-top: 64px;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 72px;
 }
 
 .playerLaughCountText {
@@ -61,40 +86,56 @@
   font-family: "Pacifico", cursive;
 }
 
-.namesAndCount {
+/* ScoreBoard  */
+
+.scoreBoard {
   display: flex;
-  align-items: center;
-  margin-top: 16px;
+  justify-content: space-between;
+  padding-top: 16px;
 }
 
 .playerName {
   color: #2a9d8f;
   font-size: 24px;
   font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.scoreBoardCount {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .plusLaugh {
   background: url(../../images/plus.png) no-repeat;
   background-position: center;
   cursor: pointer;
-  width: 10%;
   height: 64px;
-  display: inline-block;
-  vertical-align: middle;
+  width: 64px;
+
+  /* flex: .6; */
+  /* flex-basis: 0; */
 }
 
 .laughNumber {
   color: #2a9d8f;
   font-size: 24px;
   font-family: "Quicksand", sans-serif;
+  width: 32px;
+  /* flex: .6; */
+  /* flex-basis: 0; */
 }
 
 .minusLaugh {
   background: url(../../images/minus.png) no-repeat;
   background-position: center;
   cursor: pointer;
-  width: 10%;
+  width: 64px;
   height: 64px;
-  display: inline-block;
-  vertical-align: middle;
+  /* flex: .6; */
+  /* flex-basis: 0; */
 }

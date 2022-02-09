@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Intro() {
   return (
     <div className="gradientBack">
-      <div className="introContents">
+      <div className="introContents desktopMaxWidth">
         <div className="introH1H2">
           <div>
             <h1 className="dadJokesIntroH1">Dad Jokes</h1>

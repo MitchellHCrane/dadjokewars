@@ -6,7 +6,7 @@ function HowItWorks() {
       {/* Layout */}
       <div className="pageLayoutContainer">
         {/* Page Content */}
-        <div className="pageContent">
+        <div className="pageContent desktopMaxWidth">
           {/* Page heading Styles */}
           <div className="pageHeading">
             <h2 className="pacificoBlueH2">How it Works</h2>

@@ -1,18 +1,57 @@
 import { url } from "inspector";
 import { Link } from "react-router-dom";
+import FinalScores from './FinalScores'
 
 function GameOver() {
+
+  const players = [
+    {
+      name: "Mitchell",
+      score: 7,
+    },
+    {
+      name: "Skyler",
+      score: 2,
+    },
+  ];
+
+  function lowScoreName() {
+
+    const playerArray = players.map((e)=> e.name);
+    console.log(playerArray);
+    const scoreArray = players.map((e)=> e.score);
+    console.log(scoreArray);
+    const lowScore = (Math.min(...scoreArray));
+    console.log(lowScore);
+    // const playerWithLowScore = ;
+
+    if (lowScore){
+      return playerArray
+    }
+    
+  }
+  lowScoreName();
+
+  
+
+
+
+
+  const scoreBoard = players.map((player) => {
+    return <FinalScores player={player} key={player.name} />;
+  });
+
   return (
     <>
       {/* Layout */}
       <div className="gradientBack">
-        <div className="pageLayoutContainer desktopMaxWidth">
+        <div className="pageLayoutContainer">
           {/* Trophy Icon  */}
           <div className="trophyContainer">
             <span className="trophyIcon"></span>
           </div>
           {/* Page Content */}
-          <div className="pageContent">
+          <div className="pageContent desktopMaxWidth">
             {/* Page heading Styles */}
             <div className="pageHeading">
               <h2 className="pacificoBlueH2" id="whiteText">
@@ -27,20 +66,7 @@ function GameOver() {
             <div>
               <h3>Final Scoreboard</h3>
             </div>
-            <div className="scoreboardGrid">
-              <div className="wrapper">
-                <div className="one">
-                  <p className="nameList" id="whiteP">Mitchell</p>
-                </div>
-                <div className="two">
-                  <p className="nameList" id="whiteP"> - 0</p>
-                </div>
-                <div className="three">
-                  <p className="nameList" id="whiteP">7</p>
-                </div>
-
-              </div>
-            </div>
+            {scoreBoard}
           </div>
           {/* End Page Content */}
           <div id="removeGradient" className="bottomButtons">

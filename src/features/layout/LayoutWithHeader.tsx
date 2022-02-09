@@ -9,7 +9,7 @@ function LayoutWithHeader({ children }: MyComponentProps) {
             <div>
                 <Header/>
             </div>
-            <main className="desktopMaxWidth">{children}</main>
+            <main>{children}</main>
         </>
     )
 }

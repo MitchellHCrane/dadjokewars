@@ -1,41 +1,33 @@
 import { url } from "inspector";
 import { Link } from "react-router-dom";
-import FinalScores from './FinalScores'
+import FinalScores from "./FinalScores";
 
 function GameOver() {
-
   const players = [
     {
       name: "Mitchell",
-      score: 7,
+      score: 3,
     },
     {
       name: "Skyler",
-      score: 2,
+      score: 5,
     },
   ];
 
   function lowScoreName() {
-
-    const playerArray = players.map((e)=> e.name);
+    const playerArray = players.map((e) => e.name);
     console.log(playerArray);
-    const scoreArray = players.map((e)=> e.score);
+    const scoreArray = players.map((e) => e.score);
     console.log(scoreArray);
-    const lowScore = (Math.min(...scoreArray));
+    const lowScore = Math.min(...scoreArray);
     console.log(lowScore);
     // const playerWithLowScore = ;
 
-    if (lowScore){
-      return playerArray
+    if (lowScore) {
+      return playerArray;
     }
-    
   }
   lowScoreName();
-
-  
-
-
-
 
   const scoreBoard = players.map((player) => {
     return <FinalScores player={player} key={player.name} />;

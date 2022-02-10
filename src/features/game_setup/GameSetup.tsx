@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import PlayerCounter from "./counter";
+import RoundCounter from "./RoundCounter";
 
 function GameSetup() {
   return (
@@ -14,25 +16,9 @@ function GameSetup() {
           </div>
           {/* End Page Heading Styles */}
           {/* Players  */}
-          <div className="inputContainer">
-            <label htmlFor="player">Players</label>
-            <div className="inputNumber">
-              <span className="minusPlayer"></span>
-              <input name="player" type="number" value="1" />
-              <span className="plusPlayer"></span>
-            </div>
-          </div>
-
+          <PlayerCounter />
           {/* Rounds  */}
-
-          <div className="inputContainer">
-            <label htmlFor="player">Players</label>
-            <div className="inputNumber">
-              <span className="minusPlayer"></span>
-              <input name="player" type="number" value="1" />
-              <span className="plusPlayer"></span>
-            </div>
-          </div>
+          <RoundCounter />
         </div>
         {/* End Page Content */}
 

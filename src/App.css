@@ -180,6 +180,12 @@ h3 {
   margin-top: 24px;
 }
 
+.inputText {
+  color:#2a9d8f;
+  font-size: 24px;
+  font-family: "Quicksand", sans-serif;
+}
+
 /* Page layout  */
 
 .pageLayoutContainer {

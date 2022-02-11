@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import * as countActions from "../../redux/actions/countActions";
 
 function PlayerCounter() {
   const [counter, setCounter] = useState(2);
 
   const handleClickPlus = () => {
-    if (counter < 10)
-    setCounter(counter + 1);
+    if (counter < 10) setCounter(counter + 1);
   };
   const handleClickMinus = () => {
     if (counter > 2) setCounter(counter - 1);
@@ -22,4 +23,10 @@ function PlayerCounter() {
   );
 }
 
-export default PlayerCounter;
+function mapStateToProps(state: any) {
+  return {
+    count: state.count,
+  };
+}
+
+export default connect(mapStateToProps)(PlayerCounter);

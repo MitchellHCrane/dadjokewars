@@ -12,7 +12,7 @@ import "./features/game_over/game_over.css";
 import LayoutWithHeader from "./features/layout/LayoutWithHeader";
 import Intro from "./features/intro/Intro";
 import HowItWorks from "./features/how_it_works/HowItWorks";
-import GameSetup from "./features/game_setup/GameSetup";
+import { GameSetup } from "./features/game_setup/GameSetup";
 import PlayerNames from "./features/player_names/PlayerNames";
 import PlayGame from "./features/play_game/PlayGame";
 import GameOver from "./features/game_over/GameOver";

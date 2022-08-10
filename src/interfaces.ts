@@ -1,11 +1,12 @@
 export interface Game {
-  name: string;
   playerCount: number;
-  score: number;
-  price: string;
-  origQty: string;
+  roundCount: number;
 }
 
+export interface PlayerRecord {
+  name: string;
+  laughCount: number;
+}
 // Think about how the game is laid out and structure it
 
 // export interface DcaBot {

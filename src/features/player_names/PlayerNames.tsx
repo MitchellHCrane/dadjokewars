@@ -1,6 +1,26 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import type { RootState } from "../../app/store";
 
 function PlayerNames() {
+  const tasks = useSelector((state: RootState) => state.tasks);
+
+  const playerCountInput = tasks.playerCount;
+
+  const playerNameInput = () => {
+    return (
+      <div className="inputContainer">
+        <label htmlFor="playerName" id="gameSetupPlayerP" className="playerP">
+          Player 1
+        </label>
+        <input
+          className="playerNamesInput"
+          name="player name"
+          type="text"
+        ></input>
+      </div>
+    );
+  };
   return (
     <>
       {/* Layout */}
@@ -15,32 +35,7 @@ function PlayerNames() {
           {/* End Page Heading Styles */}
           {/* Player Names  */}
 
-          <div className="inputContainer">
-            <label
-              htmlFor="playerName"
-              id="gameSetupPlayerP"
-              className="playerP"
-            >
-              Player 1
-            </label>
-            <input
-              className="playerNamesInput"
-              name="player name"
-              type="text"
-            ></input>
-          </div>
-
-          <div className="inputContainer">
-            <label
-              htmlFor="playerName"
-              id="gameSetupPlayerP"
-              className="playerP"
-            >
-              Player 2
-            </label>
-
-            <input className="playerNamesInput" type="text"></input>
-          </div>
+          {/* player name inputs here  */}
         </div>
         {/* End Page Content Test*/}
 

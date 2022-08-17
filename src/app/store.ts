@@ -8,7 +8,7 @@ export const store = configureStore({
   devTools: process.env.REACT_APP_ENV === "DEVELOPMENT",
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false,
+      serializableCheck: true,
     }),
 });
 

@@ -8,6 +8,7 @@ function PlayerNames() {
   );
 
   const playerNameInput = () => {
+    // console.log(playerCountUserInput);
     for (let i = 0; i <= playerCountUserInput; i++) {
       return (
         <div className="inputContainer">

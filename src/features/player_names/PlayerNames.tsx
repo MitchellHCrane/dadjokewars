@@ -3,24 +3,27 @@ import { Link } from "react-router-dom";
 import type { RootState } from "../../app/store";
 
 function PlayerNames() {
-  const tasks = useSelector((state: RootState) => state.tasks);
-
-  const playerCountInput = tasks.playerCount;
+  const playerCountUserInput = useSelector(
+    (state: RootState) => state.tasks.playerCount
+  );
 
   const playerNameInput = () => {
-    return (
-      <div className="inputContainer">
-        <label htmlFor="playerName" id="gameSetupPlayerP" className="playerP">
-          Player 1
-        </label>
-        <input
-          className="playerNamesInput"
-          name="player name"
-          type="text"
-        ></input>
-      </div>
-    );
+    for (let i = 0; i <= playerCountUserInput; i++) {
+      return (
+        <div className="inputContainer">
+          <label htmlFor="playerName" id="gameSetupPlayerP" className="playerP">
+            Player {i + 1}
+          </label>
+          <input
+            className="playerNamesInput"
+            name="player name"
+            type="text"
+          ></input>
+        </div>
+      );
+    }
   };
+
   return (
     <>
       {/* Layout */}
@@ -34,8 +37,7 @@ function PlayerNames() {
           </div>
           {/* End Page Heading Styles */}
           {/* Player Names  */}
-
-          {/* player name inputs here  */}
+          {playerNameInput()}
         </div>
         {/* End Page Content Test*/}
 

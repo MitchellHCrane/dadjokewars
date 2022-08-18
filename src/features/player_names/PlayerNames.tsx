@@ -7,23 +7,22 @@ function PlayerNames() {
     (state: RootState) => state.tasks.playerCount
   );
 
-  const playerNameInput = () => {
-    // console.log(playerCountUserInput);
-    for (let i = 0; i <= playerCountUserInput; i++) {
-      return (
-        <div className="inputContainer">
-          <label htmlFor="playerName" id="gameSetupPlayerP" className="playerP">
-            Player {i + 1}
-          </label>
-          <input
-            className="playerNamesInput"
-            name="player name"
-            type="text"
-          ></input>
-        </div>
-      );
-    }
-  };
+  const playerInputArr = [];
+
+  for (let i = 1; i <= playerCountUserInput; i++) {
+    playerInputArr.push(
+      <div key={i} className="inputContainer">
+        <label htmlFor="playerName" id="gameSetupPlayerP" className="playerP">
+          Player {i}
+        </label>
+        <input
+          className="playerNamesInput"
+          name="player name"
+          type="text"
+        ></input>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -38,7 +37,7 @@ function PlayerNames() {
           </div>
           {/* End Page Heading Styles */}
           {/* Player Names  */}
-          {playerNameInput()}
+          {playerInputArr}
         </div>
         {/* End Page Content Test*/}
 

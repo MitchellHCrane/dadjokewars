@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-import GetJoke from "./getJoke";
+import React, { useEffect, useState } from "react";
 import LayoutWithRounds from "../layout/LayoutWithRounds";
 import ScoreBoardPlayer from "./ScoreBoardPlayer";
+import axios from "axios";
 
 function PlayGame() {
   //Blur Joke Functionality.
@@ -32,6 +32,29 @@ function PlayGame() {
     setJokeVisible(!jokeVisible);
   };
 
+  const [joke, setJoke] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  function getJokeFromApi() {
+    setLoading(true);
+    setJokeVisible(false);
+    axios
+      .get("https://icanhazdadjoke.com/", {
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      .then((res: any) => {
+        setLoading(false);
+        const jokeString = `${res.data.joke}`;
+        setJoke(jokeString);
+      });
+  }
+
+  useEffect(() => {
+    getJokeFromApi();
+  }, []);
+
   return (
     <>
       {/* Layout */}
@@ -53,7 +76,7 @@ function PlayGame() {
                 style={!jokeVisible ? jokeVisibleStyles : {}}
                 id="jokeDrop"
               >
-                Past, present, and future walked into a bar.... It was tense.
+                <span>{loading ? "Loading Joke..." : joke}</span>{" "}
               </p>
 
               <button onClick={toggleBlurBtn} className="viewJoke"></button>
@@ -70,9 +93,13 @@ function PlayGame() {
         </div>
         {/* End Page Content */}
         <div className="bottomButtons">
-          <GetJoke />
+          <Link to="">
+            <button onClick={() => getJokeFromApi()} className="orangeBtn">
+              Next Player
+            </button>
+          </Link>
           <p className="bottomLink">
-            <Link id="returnGreen" className="whiteLinkBtn" to="/game-over">
+            <Link className="returnGreen" to="/game-over">
               End Game
             </Link>
           </p>

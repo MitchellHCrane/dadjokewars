@@ -1,11 +1,21 @@
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import type { RootState } from "../../app/store";
+import { playerSlice, taskSlice } from "../../taskSlice";
 
 function PlayerNames() {
+  const dispatch = useDispatch();
   const playerCountUserInput = useSelector(
     (state: RootState) => state.tasks.playerCount
   );
+
+  const roundCountUserInput = useSelector(
+    (state: RootState) => state.tasks.roundCount
+  );
+
+  const [playerName, setPlayerName] = useState("");
+  const [laughCount, setLaughCount] = useState(2);
 
   const playerInputArr = [];
 
@@ -23,11 +33,24 @@ function PlayerNames() {
       </div>
     );
   }
+  //This is not set up correctly yet. Needs work
+  const handlePlayerNames = () => {
+    const data = {
+      name: playerName,
+      laughCount: laughCount,
+    };
+    dispatch(playerSlice.actions.setPlayersNames({ data: data }));
+  };
 
   return (
     <>
       {/* Layout */}
       <div className="pageLayoutContainer">
+        <div className="orangeBanner">
+          <h2 className="pacificoBlueH2" id="roundNumber">
+            Rounds: {roundCountUserInput}
+          </h2>
+        </div>
         {/* Page Content */}
         <div className="pageContent desktopMaxWidth">
           {/* Page heading Styles */}
@@ -43,12 +66,16 @@ function PlayerNames() {
 
         <div className="bottomButtons">
           <Link to="/play-game">
-            <button id="bottomBtn" className="orangeBtn">
+            <button
+              onClick={handlePlayerNames}
+              id="bottomBtn"
+              className="orangeBtn"
+            >
               Start Game
             </button>
           </Link>
           <p className="bottomLink">
-            <Link id="returnGreen" to="/game-setup" className="whiteLinkBtn">
+            <Link to="/game-setup" className="returnGreen">
               Back to Game Setup
             </Link>
           </p>

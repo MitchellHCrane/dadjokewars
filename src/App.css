@@ -181,7 +181,7 @@ h3 {
 }
 
 .inputText {
-  color:#2a9d8f;
+  color: #2a9d8f;
   font-size: 24px;
   font-family: "Quicksand", sans-serif;
 }
@@ -277,11 +277,18 @@ input {
   color: #ffffff;
   text-decoration: none;
 }
+.orangeBtn:hover {
+  background-color: #f4a360;
+}
 .whiteLinkBtn {
   color: #ffffff;
   text-decoration: none;
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
+}
+
+.whiteLinkBtn:hover {
+  color: #264653;
 }
 
 .bottomButtons {
@@ -298,8 +305,15 @@ input {
   );
 }
 
-#returnGreen {
+.returnGreen {
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
   color: #2a9d8f;
+}
+
+.returnGreen:hover {
+  color: #264653;
 }
 
 @media (min-width: 640px) {

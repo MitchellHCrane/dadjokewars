@@ -6,10 +6,7 @@ const initialState: Game = {
   roundCount: 1,
 };
 
-const playerState: PlayerRecord = {
-  name: "",
-  laughCount: 0,
-};
+const playerState: PlayerRecord[] = [];
 
 export const taskSlice = createSlice({
   name: "tasks",
@@ -42,17 +39,16 @@ export const taskSlice = createSlice({
 
 export const playerSlice = createSlice({
   name: "players",
-  initialState: playerState as PlayerRecord,
+  initialState: playerState as PlayerRecord[],
   reducers: {
-    //players
-    //player names
-    //points
-
-    setPlayersNames: (state, action: PayloadAction<{ data: PlayerRecord }>) => {
+    setPlayersNames: (state, action: PayloadAction<{ data: string[] }>) => {
       const { data } = action.payload;
       if (data) {
-        //do something here
-        return data;
+        const playerRecordsArray = data.map((name) => ({
+          name,
+          laughCount: 0,
+        }));
+        return playerRecordsArray;
       } else {
         return state;
       }

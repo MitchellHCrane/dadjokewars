@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import type { RootState } from "../../app/store";
 import { playerSlice, taskSlice } from "../../taskSlice";
 
@@ -9,37 +9,46 @@ function PlayerNames() {
   const playerCountUserInput = useSelector(
     (state: RootState) => state.tasks.playerCount
   );
-
   const roundCountUserInput = useSelector(
     (state: RootState) => state.tasks.roundCount
   );
 
-  const [playerName, setPlayerName] = useState("");
-  const [laughCount, setLaughCount] = useState(2);
+  const [playerNames, setPlayerNames] = useState<string[]>([]);
+  // const [laughCount, setLaughCount] = useState(2);
+  const navigate = useNavigate();
+  const handleUserInput = (i: number, e: any) => {
+    let inputNames: string[] = [...playerNames];
+    inputNames[i] = e.target.value;
+    setPlayerNames(inputNames);
+  };
 
-  const playerInputArr = [];
+  const playerInputArr: any[] = [];
 
-  for (let i = 1; i <= playerCountUserInput; i++) {
+  for (let i = 0; i < playerCountUserInput; i++) {
     playerInputArr.push(
       <div key={i} className="inputContainer">
         <label htmlFor="playerName" id="gameSetupPlayerP" className="playerP">
-          Player {i}
+          Player {i + 1}
         </label>
         <input
           className="playerNamesInput"
           name="player name"
           type="text"
+          onChange={(e) => handleUserInput(i, e)}
         ></input>
       </div>
     );
   }
   //This is not set up correctly yet. Needs work
   const handlePlayerNames = () => {
-    const data = {
-      name: playerName,
-      laughCount: laughCount,
-    };
-    dispatch(playerSlice.actions.setPlayersNames({ data: data }));
+    //Validation
+    if (playerNames.length < playerCountUserInput) {
+      alert("Please Enter Usernames");
+    } else {
+      navigate("/play-game");
+    }
+
+    dispatch(playerSlice.actions.setPlayersNames({ data: playerNames }));
   };
 
   return (
@@ -65,15 +74,15 @@ function PlayerNames() {
         {/* End Page Content Test*/}
 
         <div className="bottomButtons">
-          <Link to="/play-game">
-            <button
-              onClick={handlePlayerNames}
-              id="bottomBtn"
-              className="orangeBtn"
-            >
-              Start Game
-            </button>
-          </Link>
+          {/* <Link to="/play-game"> */}
+          <button
+            onClick={handlePlayerNames}
+            id="bottomBtn"
+            className="orangeBtn"
+          >
+            Start Game
+          </button>
+          {/* </Link> */}
           <p className="bottomLink">
             <Link to="/game-setup" className="returnGreen">
               Back to Game Setup

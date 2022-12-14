@@ -5,6 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `yarn start`
+or
+### `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -46,3 +48,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 Next Steps:
 -install react router "npm i react-router-dom"
+-handle state of application

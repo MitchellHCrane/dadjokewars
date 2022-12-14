@@ -53,6 +53,5 @@ export const playerSlice = createSlice({
         return state;
       }
     },
-    //rounds
   },
 });

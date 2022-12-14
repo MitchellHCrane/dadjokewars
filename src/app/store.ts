@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { taskSlice } from "../taskSlice";
+import { playerSlice, taskSlice } from "../taskSlice";
 
 export const store = configureStore({
   reducer: {
     tasks: taskSlice.reducer,
+    players: playerSlice.reducer,
   },
   devTools: process.env.REACT_APP_ENV === "DEVELOPMENT",
   middleware: (getDefaultMiddleware) =>

@@ -3,23 +3,31 @@ import React, { useEffect, useState } from "react";
 import LayoutWithRounds from "../layout/LayoutWithRounds";
 import ScoreBoardPlayer from "./ScoreBoardPlayer";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 function PlayGame() {
-  //Blur Joke Functionality.
+  const players = useSelector((state: RootState) => state.players);
 
-  const players = [
-    {
-      name: "Mitchell",
-      score: 7,
-    },
-    {
-      name: "Skyler",
-      score: 2,
-    },
-  ];
+  // const players = [
+  //   {
+  //     name: "Mitchell",
+  //     score: 7,
+  //   },
+  //   {
+  //     name: "Skyler",
+  //     score: 2,
+  //   },
+  // ];
 
   const scoreBoard = players.map((player) => {
-    return <ScoreBoardPlayer player={player} key={player.name} />;
+    return (
+      <ScoreBoardPlayer
+        player={player}
+        key={player.name}
+        laughCount={player.laughCount}
+      />
+    );
   });
 
   const [jokeVisible, setJokeVisible] = useState(false);

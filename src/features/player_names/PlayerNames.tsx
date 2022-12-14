@@ -43,12 +43,11 @@ function PlayerNames() {
   const handlePlayerNames = () => {
     //Validation
     if (playerNames.length < playerCountUserInput) {
-      alert("Please Enter Usernames");
+      alert("Please enter all usernames");
     } else {
+      dispatch(playerSlice.actions.setPlayersNames({ data: playerNames }));
       navigate("/play-game");
     }
-
-    dispatch(playerSlice.actions.setPlayersNames({ data: playerNames }));
   };
 
   return (

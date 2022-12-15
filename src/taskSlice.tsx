@@ -12,28 +12,14 @@ export const taskSlice = createSlice({
   name: "tasks",
   initialState: initialState as Game,
   reducers: {
-    //players
-    //player names
-    //points
-    setScore: (state, action: PayloadAction<{ data: Game }>) => {
-      const { data } = action.payload;
-      if (data) {
-        //do something here
-      } else {
-        return data;
-      }
-    },
-
     setPlayersAndRoundCount: (state, action: PayloadAction<{ data: Game }>) => {
       const { data } = action.payload;
       if (data) {
-        //do something here
         return data;
       } else {
         return state;
       }
     },
-    //rounds
   },
 });
 
@@ -49,6 +35,15 @@ export const playerSlice = createSlice({
           laughCount: 0,
         }));
         return playerRecordsArray;
+      } else {
+        return state;
+      }
+    },
+    setLaughScore: (state, action: PayloadAction<{ data: PlayerRecord[] }>) => {
+      const { data } = action.payload;
+      console.log(data);
+      if (data) {
+        return data;
       } else {
         return state;
       }

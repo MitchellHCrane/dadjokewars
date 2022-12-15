@@ -120,9 +120,12 @@
   cursor: pointer;
   height: 64px;
   width: 64px;
+}
 
-  /* flex: .6; */
-  /* flex-basis: 0; */
+.plusLaugh:hover {
+background-color:#2a9d8f;
+border: none;
+border-radius: 16px;
 }
 
 .laughNumber {
@@ -140,6 +143,13 @@
   cursor: pointer;
   width: 64px;
   height: 64px;
-  /* flex: .6; */
-  /* flex-basis: 0; */
 }
+
+.minusLaugh:hover {
+  background-color:#2a9d8f;
+  border: none;
+  border-radius: 16px;
+  }
+  .noHover {
+    pointer-events: none;
+  }

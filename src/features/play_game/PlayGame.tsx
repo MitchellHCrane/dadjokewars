@@ -8,40 +8,16 @@ import { RootState } from "../../app/store";
 
 function PlayGame() {
   const players = useSelector((state: RootState) => state.players);
-
-  // const players = [
-  //   {
-  //     name: "Mitchell",
-  //     score: 7,
-  //   },
-  //   {
-  //     name: "Skyler",
-  //     score: 2,
-  //   },
-  // ];
-
-  const scoreBoard = players.map((player) => {
-    return (
-      <ScoreBoardPlayer
-        player={player}
-        key={player.name}
-        laughCount={player.laughCount}
-      />
-    );
-  });
-
   const [jokeVisible, setJokeVisible] = useState(false);
-
   const jokeVisibleStyles = {
     filter: "blur(4px)",
   };
+  const [joke, setJoke] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const toggleBlurBtn = () => {
     setJokeVisible(!jokeVisible);
   };
-
-  const [joke, setJoke] = useState("");
-  const [loading, setLoading] = useState(false);
 
   function getJokeFromApi() {
     setLoading(true);
@@ -89,14 +65,21 @@ function PlayGame() {
 
               <button onClick={toggleBlurBtn} className="viewJoke"></button>
             </div>
-            {/* <button onClick={blurEffect}></button> */}
           </div>
           <div className="scoreContent">
             <header className="playerLaughCount">
               <p className="playerLaughCountText">Player</p>
               <p className="playerLaughCountText">Laugh Count</p>
             </header>
-            {scoreBoard}
+            {players.map((player) => {
+              return (
+                <ScoreBoardPlayer
+                  key={player.name}
+                  player={player}
+                  laughCount={player.laughCount}
+                />
+              );
+            })}
           </div>
         </div>
         {/* End Page Content */}

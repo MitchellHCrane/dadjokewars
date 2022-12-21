@@ -1,36 +1,35 @@
 import { url } from "inspector";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { RootState } from "../../app/store";
 import FinalScores from "./FinalScores";
 
 function GameOver() {
-  const players = [
-    {
-      name: "Mitchell",
-      score: 3,
-    },
-    {
-      name: "Skyler",
-      score: 5,
-    },
-  ];
+  const players = useSelector((state: RootState) => state.players);
 
-  function lowScoreName() {
-    const playerArray = players.map((e) => e.name);
-    console.log(playerArray);
-    const scoreArray = players.map((e) => e.score);
-    console.log(scoreArray);
-    const lowScore = Math.min(...scoreArray);
-    console.log(lowScore);
-    // const playerWithLowScore = ;
+  // function lowScoreName() {
+  //   const playerArray = players.map((e) => e.name);
+  //   console.log(playerArray);
+  //   const scoreArray = players.map((e) => e.score);
+  //   console.log(scoreArray);
+  //   const lowScore = Math.min(...scoreArray);
+  //   console.log(lowScore);
+  //   // const playerWithLowScore = ;
 
-    if (lowScore) {
-      return playerArray;
-    }
-  }
-  lowScoreName();
+  //   if (lowScore) {
+  //     return playerArray;
+  //   }
+  // }
+  // lowScoreName();
 
   const scoreBoard = players.map((player) => {
-    return <FinalScores player={player} key={player.name} />;
+    return (
+      <FinalScores
+        key={player.name}
+        player={player}
+        laughCount={player.laughCount}
+      />
+    );
   });
 
   return (

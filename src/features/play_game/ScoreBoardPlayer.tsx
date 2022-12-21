@@ -9,6 +9,7 @@ function ScoreBoardPlayer(props: any) {
 
   const [laughScore, setLaughScore] = useState(0);
   const playerName = props.player.name;
+
   // const dispatch = useDispatch();
   const handleMinus = () => {
     laughScore === 0 ? 0 : setLaughScore(laughScore - 1);

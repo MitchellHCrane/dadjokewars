@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { RootState } from "./app/store";
 import { Game, PlayerRecord } from "./interfaces";
 
 const initialState: Game = {
   playerCount: 2,
   roundCount: 1,
 };
-
 const playerState: PlayerRecord[] = [];
 
 export const taskSlice = createSlice({
@@ -39,11 +40,15 @@ export const playerSlice = createSlice({
         return state;
       }
     },
-    setLaughScore: (state, action: PayloadAction<{ data: PlayerRecord[] }>) => {
+    setLaughScore: (state, action: PayloadAction<{ data: PlayerRecord }>) => {
       const { data } = action.payload;
-      console.log(data);
+
       if (data) {
-        return data;
+        const foundIndexName = state.findIndex((e) => e.name === data.name);
+        if (foundIndexName === -1) {
+          return state;
+        }
+        state[foundIndexName] = data;
       } else {
         return state;
       }

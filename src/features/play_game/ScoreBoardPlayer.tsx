@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { store } from "../../app/store";
-// import { playerSlice } from "../../taskSlice";
+import { useDispatch } from "react-redux";
+import { PlayerRecord } from "../../interfaces";
+import { playerSlice } from "../../taskSlice";
 // Props from PlayGame.tsx
 function ScoreBoardPlayer(props: any) {
-  // Laughs from redux store. Should be 0 props.player.laughCount is probably something I don't need
-  // const laughs = props.player.laughCount;
+  const dispatch = useDispatch();
 
   const [laughScore, setLaughScore] = useState(0);
   const playerName = props.player.name;
@@ -13,9 +12,27 @@ function ScoreBoardPlayer(props: any) {
   // const dispatch = useDispatch();
   const handleMinus = () => {
     laughScore === 0 ? 0 : setLaughScore(laughScore - 1);
+    const data: PlayerRecord = {
+      name: playerName,
+      laughCount: laughScore,
+    };
+    dispatch(
+      playerSlice.actions.setLaughScore({
+        data: data,
+      })
+    );
   };
   const handlePlus = () => {
     setLaughScore(laughScore + 1);
+    const data: PlayerRecord = {
+      name: playerName,
+      laughCount: laughScore,
+    };
+    dispatch(
+      playerSlice.actions.setLaughScore({
+        data: data,
+      })
+    );
   };
 
   return (

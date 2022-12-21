@@ -279,6 +279,7 @@ input {
 }
 .orangeBtn:hover {
   background-color: #f4a360;
+  cursor: pointer;
 }
 .whiteLinkBtn {
   color: #ffffff;

@@ -39,7 +39,7 @@ function PlayerNames() {
       </div>
     );
   }
-  //This is not set up correctly yet. Needs work
+
   const handlePlayerNames = () => {
     //Validation
     if (playerNames.length < playerCountUserInput) {

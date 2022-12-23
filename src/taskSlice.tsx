@@ -53,5 +53,21 @@ export const playerSlice = createSlice({
         return state;
       }
     },
+    setLaughScoreTest: (
+      state,
+      action: PayloadAction<{ data: PlayerRecord; type: string }>
+    ) => {
+      const { data, type } = action.payload;
+      const foundIndexName = state.findIndex((e) => e.name === data.name);
+      if (type === "plusLaugh") {
+        data.laughCount += 1;
+        state[foundIndexName] = data;
+      } else if (type === "minusLaugh") {
+        data.laughCount === 0 ? 0 : (data.laughCount -= 1);
+        state[foundIndexName] = data;
+      } else {
+        return state;
+      }
+    },
   },
 });

@@ -120,6 +120,7 @@
   cursor: pointer;
   height: 64px;
   width: 64px;
+  border: none;
 }
 
 .plusLaugh:hover {
@@ -143,6 +144,7 @@ border-radius: 16px;
   cursor: pointer;
   width: 64px;
   height: 64px;
+  border: none;
 }
 
 .minusLaugh:hover {

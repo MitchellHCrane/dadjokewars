@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import LayoutWithRounds from "../layout/LayoutWithRounds";
+// import LayoutWithRounds from "../layout/LayoutWithRounds";
 import ScoreBoardPlayer from "./ScoreBoardPlayer";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -43,7 +43,7 @@ function PlayGame() {
     <>
       {/* Layout */}
       <div className="pageLayoutContainer">
-        <LayoutWithRounds />
+        {/* <LayoutWithRounds /> */}
         {/* Page Content */}
         <div className="pageContent desktopMaxWidth">
           {/* Page heading Styles */}

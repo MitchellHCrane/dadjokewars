@@ -22,12 +22,12 @@ export const GameSetup = () => {
   // Logic for Round Counter
   const [roundCount, setRoundCount] = useState(1);
 
-  const handleRoundPlus = () => {
-    if (roundCount < 10) setRoundCount(roundCount + 1);
-  };
-  const handleRoundMinus = () => {
-    if (roundCount > 1) setRoundCount(roundCount - 1);
-  };
+  // const handleRoundPlus = () => {
+  //   if (roundCount < 10) setRoundCount(roundCount + 1);
+  // };
+  // const handleRoundMinus = () => {
+  //   if (roundCount > 1) setRoundCount(roundCount - 1);
+  // };
   // uses dispatch to call taskSlice and use action to update redux state off of button. Updates players and rounds to then populate next page.
   const handlePlayerRoundCountSubmit = () => {
     const data = {
@@ -56,11 +56,11 @@ export const GameSetup = () => {
             counter={playerCount}
           />
           {/* Rounds  */}
-          <RoundCounter
+          {/* <RoundCounter
             handleRoundPlus={handleRoundPlus}
             handleRoundMinus={handleRoundMinus}
             counter={roundCount}
-          />
+          /> */}
         </div>
         {/* End Page Content */}
 

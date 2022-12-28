@@ -9,7 +9,7 @@ function Intro() {
             <h1 className="dadJokesIntroH1">Dad Jokes</h1>
           </div>
           <div>
-            <h2 className="introH2">You Laugh, You Lose</h2>
+            <h2 className="introH2">Laugh, You Lose</h2>
           </div>
         </div>
         <div id="removeGradient" className="bottomButtons">

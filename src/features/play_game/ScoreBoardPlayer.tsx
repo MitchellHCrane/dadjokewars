@@ -1,54 +1,22 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { PlayerRecord } from "../../interfaces";
 import { playerSlice } from "../../taskSlice";
 // Props from PlayGame.tsx
-function ScoreBoardPlayer(props: any) {
+
+interface Props {
+  player: PlayerRecord;
+  laughCount: number;
+  isTurn: boolean;
+}
+
+const ScoreBoardPlayer: FC<Props> = ({ player, laughCount, isTurn }) => {
   const dispatch = useDispatch();
 
-  // const [laughScore, setLaughScore] = useState(0);
-  const playerName = props.player.name;
-  const laughNumber = props.player.laughCount;
-
-  // const handleMinus = () => {
-  //   laughScore === 0 ? 0 : setLaughScore(laughScore - 1);
-  //   const data: PlayerRecord = {
-  //     name: playerName,
-  //     laughCount: laughScore,
-  //   };
-  //   dispatch(
-  //     playerSlice.actions.setLaughScore({
-  //       data: data,
-  //     })
-  //   );
-  // };
-  // const handlePlus = () => {
-  //   setLaughScore(laughScore + 1);
-  //   const data: PlayerRecord = {
-  //     name: playerName,
-  //     laughCount: laughScore,
-  //   };
-  //   dispatch(
-  //     playerSlice.actions.setLaughScore({
-  //       data: data,
-  //     })
-  //   );
-  // };
-
   const handleCount = (type: string) => {
-    // switch (type) {
-    //   case "minusLaugh":
-    //     laughScore === 0 ? 0 : setLaughScore(laughScore - 1);
-    //     break;
-    //   case "plusLaugh":
-    //     setLaughScore(laughScore + 1);
-    //     break;
-    //   default:
-    //     setLaughScore(laughScore);
-    // }
     const data: PlayerRecord = {
-      name: playerName,
-      laughCount: laughNumber,
+      name: player.name,
+      laughCount: laughCount,
     };
     dispatch(
       playerSlice.actions.setLaughScoreTest({
@@ -59,25 +27,18 @@ function ScoreBoardPlayer(props: any) {
   };
 
   return (
-    <div className="scoreBoard">
-      <p className="playerName">{playerName}</p>
-      {/* <div className="scoreBoardCount">
-        <span
-          onClick={handleMinus}
-          className={`${laughScore === 0 ? "noHover" : ""} minusLaugh`}
-        />
-        <p className="laughNumber">{laughScore}</p>
-        <span
-          onClick={handlePlus}
-          className={`plusLaugh`}
-        />
-      </div> */}
+    <div
+      className={`${
+        !isTurn ? "bg-gray-200 rounded-md px-2 my-2" : ""
+      } scoreBoard`}
+    >
+      <p className="player.name">{player.name}</p>
       <div className="scoreBoardCount">
         <button
           onClick={() => handleCount("minusLaugh")}
-          className={`${laughNumber === 0 ? "noHover" : ""} minusLaugh`}
+          className={`${laughCount === 0 ? "noHover" : ""} minusLaugh`}
         />
-        <p className="laughNumber">{laughNumber}</p>
+        <p className="laughCount">{laughCount}</p>
         <button
           onClick={() => handleCount("plusLaugh")}
           className={`plusLaugh`}
@@ -85,6 +46,6 @@ function ScoreBoardPlayer(props: any) {
       </div>
     </div>
   );
-}
+};
 
 export default ScoreBoardPlayer;

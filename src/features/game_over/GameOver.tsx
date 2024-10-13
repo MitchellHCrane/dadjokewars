@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { RootState } from "../../app/store";
@@ -33,48 +32,45 @@ function GameOver() {
   });
 
   return (
-    <>
-      {/* Layout */}
-      <div className="gradientBack">
-        <div className="pageLayoutContainer">
-          {/* Trophy Icon  */}
-          <div className="trophyContainer">
-            <span className="trophyIcon"></span>
-          </div>
-          {/* Page Content */}
-          <div className="pageContent desktopMaxWidth">
-            {/* Page heading Styles */}
-            <div className="pageHeading">
-              <h2 className="pacificoBlueH2" id="whiteText">
-                Mitchell Wins!
-              </h2>
-              <p id="whiteText">
-                Congratulations you laughed at the least amount of jokes!
-              </p>
-            </div>
-            {/* End Page Heading Styles */}
-            {/* Scoreboard  */}
-            <div>
-              <h3>Final Scoreboard</h3>
-            </div>
-            {scoreBoard}
-          </div>
-          {/* End Page Content */}
-          <div id="removeGradient" className="bottomButtons">
-            <Link to="/game-setup">
-              <button id="bottomBtn" className="orangeBtn">
-                Play Again
-              </button>
-            </Link>
-            <p className="bottomLink">
-              <Link className="whiteLinkBtn" to="/game-setup">
-                New Game
-              </Link>
+    <div className="gradientBack">
+      <div className="pageLayoutContainer">
+        {/* Trophy Icon  */}
+        <div className="trophyContainer">
+          <span className="trophyIcon"></span>
+        </div>
+        {/* Page Content */}
+        <div className="pageContent desktopMaxWidth">
+          {/* Page heading Styles */}
+          <div className="pageHeading">
+            <h2 className="pacificoBlueH2" id="whiteText">
+              insert player wins!
+            </h2>
+            <p id="whiteText">
+              Congratulations you laughed at the least amount of jokes!
             </p>
           </div>
+          {/* End Page Heading Styles */}
+          {/* Scoreboard  */}
+          <div>
+            <h3>Final Scoreboard</h3>
+          </div>
+          {scoreBoard}
+        </div>
+        {/* End Page Content */}
+        <div id="removeGradient" className="bottomButtons">
+          <Link to="/game-setup">
+            <button id="bottomBtn" className="orangeBtn">
+              Play Again
+            </button>
+          </Link>
+          <p className="bottomLink">
+            <Link className="whiteLinkBtn" to="/game-setup">
+              New Game
+            </Link>
+          </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

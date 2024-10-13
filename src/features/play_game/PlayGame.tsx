@@ -14,6 +14,7 @@ function PlayGame() {
   };
   const [joke, setJoke] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isTurn] = useState(false);
 
   const toggleBlurBtn = () => {
     setJokeVisible(!jokeVisible);
@@ -77,6 +78,7 @@ function PlayGame() {
                   key={player.name}
                   player={player}
                   laughCount={player.laughCount}
+                  isTurn={isTurn}
                 />
               );
             })}

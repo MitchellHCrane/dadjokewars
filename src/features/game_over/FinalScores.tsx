@@ -1,5 +1,4 @@
 import React from "react";
-import { playerSlice } from "../../taskSlice";
 
 function FinalScores(props: any) {
   return (

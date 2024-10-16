@@ -16,15 +16,17 @@ npm start
 npm build
 ```
 
+#### Most Recent Updates:
+
+- Tailwind CSS added
+- Active turn indicator added
+- Winner tracked even if result is a tie
+
 #### Updates to come:
 
 - Add duplicate name verification method
-- Adding and implementing the [Tailwindcss](https://tailwindcss.com/) framework
 - Add round logic
-  - Podium order
-    - 1st place highlighted at end of game
   - Sudden death round
-    - Logic for tie between top players
     - New round with top players begins
     - Plays until one laughs and the other doesn't
 - Option to use unfiltered/unsensored dad jokes from different API

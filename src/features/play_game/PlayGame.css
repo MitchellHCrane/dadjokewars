@@ -118,8 +118,8 @@
   background: url(../../images/plus.png) no-repeat;
   background-position: center;
   cursor: pointer;
-  height: 64px;
-  width: 64px;
+  height: 48px;
+  width: 48px;
   border: none;
 }
 
@@ -142,8 +142,8 @@ border-radius: 16px;
   background: url(../../images/minus.png) no-repeat;
   background-position: center;
   cursor: pointer;
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border: none;
 }
 

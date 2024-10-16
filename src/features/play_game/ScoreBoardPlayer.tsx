@@ -29,16 +29,18 @@ const ScoreBoardPlayer: FC<Props> = ({ player, laughCount, isTurn }) => {
   return (
     <div
       className={`${
-        !isTurn ? "bg-gray-200 rounded-md px-2 my-2" : ""
-      } scoreBoard`}
+        isTurn ? "bg-gray-200 rounded-md" : ""
+      } flex items-center justify-between pl-4 p-2`}
     >
-      <p className="player.name">{player.name}</p>
-      <div className="scoreBoardCount">
+      <p className="">{player.name}</p>
+      <div className="flex items-center justify-center">
         <button
           onClick={() => handleCount("minusLaugh")}
-          className={`${laughCount === 0 ? "noHover" : ""} minusLaugh`}
+          className={`${
+            laughCount === 0 ? "noHover cursor-not-allowed" : ""
+          } minusLaugh`}
         />
-        <p className="laughCount">{laughCount}</p>
+        <p className="mx-3">{laughCount}</p>
         <button
           onClick={() => handleCount("plusLaugh")}
           className={`plusLaugh`}

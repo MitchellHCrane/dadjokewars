@@ -14,7 +14,6 @@ function PlayerNames() {
   );
 
   const [playerNames, setPlayerNames] = useState<string[]>([]);
-  // const [laughCount, setLaughCount] = useState(2);
   const navigate = useNavigate();
   const handleUserInput = (i: number, e: any) => {
     let inputNames: string[] = [...playerNames];

@@ -1,26 +1,32 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RootState } from "../../app/store";
 import FinalScores from "./FinalScores";
+import { playerSlice, taskSlice } from "../../taskSlice";
+import { PlayerRecord } from "../../interfaces";
 
 function GameOver() {
+  const navigate = useNavigate();
   const players = useSelector((state: RootState) => state.players);
 
-  // function lowScoreName() {
-  //   const playerArray = players.map((e) => e.name);
-  //   console.log(playerArray);
-  //   const scoreArray = players.map((e) => e.score);
-  //   console.log(scoreArray);
-  //   const lowScore = Math.min(...scoreArray);
-  //   console.log(lowScore);
-  //   // const playerWithLowScore = ;
+  // Sort players by laugh count (ascending order)
+  const sortedPlayers = [...players].sort(
+    (a, b) => a.laughCount - b.laughCount
+  );
 
-  //   if (lowScore) {
-  //     return playerArray;
-  //   }
-  // }
-  // lowScoreName();
+  // Find all players with the lowest laugh count (handle ties)
+  const lowestScore = sortedPlayers[0].laughCount;
+  const winners = sortedPlayers.filter(
+    (player) => player.laughCount === lowestScore
+  );
 
+  // Prepare the winner message: single winner or multiple winners
+  const winnerMessage =
+    winners.length > 1
+      ? `It's a tie between ${winners.map((w) => w.name).join(", ")}!`
+      : `${winners[0].name} wins!`;
+
+  // Prepare the final scoreboard
   const scoreBoard = players.map((player) => {
     return (
       <FinalScores
@@ -30,6 +36,22 @@ function GameOver() {
       />
     );
   });
+
+  const handlePlayAgain = () => {
+    for (let i = 0; i < players.length; i++) {
+      const data: PlayerRecord = {
+        name: players[i].name,
+        laughCount: 0,
+      };
+      dispatch(
+        playerSlice.actions.setLaughScoreTest({
+          data: data,
+          type: "reset",
+        })
+      );
+    }
+    navigate("/play-game");
+  };
 
   return (
     <div className="gradientBack">
@@ -43,10 +65,10 @@ function GameOver() {
           {/* Page heading Styles */}
           <div className="pageHeading">
             <h2 className="pacificoBlueH2" id="whiteText">
-              insert player wins!
+              {winnerMessage}
             </h2>
             <p id="whiteText">
-              Congratulations you laughed at the least amount of jokes!
+              Congratulations! You laughed at the least amount of jokes!
             </p>
           </div>
           {/* End Page Heading Styles */}
@@ -58,11 +80,14 @@ function GameOver() {
         </div>
         {/* End Page Content */}
         <div id="removeGradient" className="bottomButtons">
-          <Link to="/game-setup">
-            <button id="bottomBtn" className="orangeBtn">
-              Play Again
-            </button>
-          </Link>
+          <button
+            id="bottomBtn"
+            className="orangeBtn hidden"
+            onClick={handlePlayAgain}
+          >
+            Play Again
+          </button>
+
           <p className="bottomLink">
             <Link className="whiteLinkBtn" to="/game-setup">
               New Game
@@ -75,3 +100,6 @@ function GameOver() {
 }
 
 export default GameOver;
+function dispatch(arg0: any) {
+  throw new Error("Function not implemented.");
+}

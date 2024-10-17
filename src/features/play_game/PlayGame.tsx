@@ -108,7 +108,10 @@ function PlayGame() {
               </button>
             </Link>
             <p className="bottomLink">
-              <Link className="returnGreen" to="/game-over">
+              <Link
+                className="text-accent hover:text-black text-[16px]"
+                to="/game-over"
+              >
                 End Game
               </Link>
             </p>

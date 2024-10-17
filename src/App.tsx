@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./features/intro/Intro.css";
 import "./features/header/header.css";
-import "./features/game_setup/gameSetup.css";
 import "./features/player_names/PlayerNames.css";
 import "./features/play_game/PlayGame.css";
 import "./features/game_over/game_over.css";

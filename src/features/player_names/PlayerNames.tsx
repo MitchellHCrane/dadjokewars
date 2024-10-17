@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import type { RootState } from "../../app/store";
 import { playerSlice, taskSlice } from "../../taskSlice";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 function PlayerNames() {
   const dispatch = useDispatch();
@@ -60,6 +61,14 @@ function PlayerNames() {
         </div>
         {/* Page Content */}
         <div className="pageContent desktopMaxWidth">
+          <div className="flex mt-4">
+            <Link
+              to="/game-setup"
+              className="flex items-center text-[16px] text-accent hover:text-black"
+            >
+              <ArrowLeftIcon className="size-4" /> Back to Game Setup
+            </Link>
+          </div>
           {/* Page heading Styles */}
           <div className="pageHeading">
             <h2 className="pacificoBlueH2">Player Names</h2>
@@ -80,12 +89,6 @@ function PlayerNames() {
           >
             Start Game
           </button>
-          {/* </Link> */}
-          <p className="bottomLink">
-            <Link to="/game-setup" className="returnGreen">
-              Back to Game Setup
-            </Link>
-          </p>
         </div>
       </div>
     </>

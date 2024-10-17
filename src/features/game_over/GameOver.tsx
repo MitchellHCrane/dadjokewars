@@ -89,7 +89,10 @@ function GameOver() {
           </button>
 
           <p className="bottomLink">
-            <Link className="whiteLinkBtn" to="/game-setup">
+            <Link
+              className="text-white hover:text-dark cursor-pointer"
+              to="/game-setup"
+            >
               New Game
             </Link>
           </p>

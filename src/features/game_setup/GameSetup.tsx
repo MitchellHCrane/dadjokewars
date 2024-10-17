@@ -5,6 +5,7 @@ import { taskSlice } from "../../taskSlice";
 
 import { PlayerCounter } from "./PlayerCount";
 import { RoundCounter } from "./RoundCount";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export const GameSetup = () => {
   const dispatch = useDispatch();
@@ -43,10 +44,19 @@ export const GameSetup = () => {
       <div className="pageLayoutContainer">
         {/* Page Content */}
         <div className="pageContent desktopMaxWidth">
+          <div className="flex mt-4">
+            <Link
+              to="/"
+              className="flex items-center text-[16px] text-accent hover:text-black"
+            >
+              <ArrowLeftIcon className="size-4" />
+              Back to Home
+            </Link>
+          </div>
           {/* Page heading Styles */}
           <div className="pageHeading">
             <h2 className="pacificoBlueH2">Game Setup</h2>
-            <p>Add/Subtract the amount of players participating.</p>
+            <p>Set the number of players participating, ranging from 2-10</p>
           </div>
           {/* End Page Heading Styles */}
           {/* Players  */}

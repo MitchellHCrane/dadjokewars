@@ -18,7 +18,10 @@ function Intro() {
           </Link>
 
           <p className="bottomLink">
-            <Link to="how-it-works" className="whiteLinkBtn">
+            <Link
+              to="how-it-works"
+              className="text-white hover:text-dark cursor-pointer text-sm"
+            >
               How it Works?
             </Link>
           </p>

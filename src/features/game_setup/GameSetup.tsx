@@ -46,7 +46,7 @@ export const GameSetup = () => {
           {/* Page heading Styles */}
           <div className="pageHeading">
             <h2 className="pacificoBlueH2">Game Setup</h2>
-            <p>Select the number of players and rounds you want to play</p>
+            <p>Add/Subtract the amount of players participating.</p>
           </div>
           {/* End Page Heading Styles */}
           {/* Players  */}

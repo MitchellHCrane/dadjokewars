@@ -53,7 +53,7 @@ function PlayerNames() {
     <>
       {/* Layout */}
       <div className="pageLayoutContainer">
-        <div className="orangeBanner">
+        <div className="hidden orangeBanner">
           <h2 className="pacificoBlueH2" id="roundNumber">
             Rounds: {roundCountUserInput}
           </h2>
